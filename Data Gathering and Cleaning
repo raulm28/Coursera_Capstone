@@ -1,0 +1,13 @@
+Data Gathering and Cleaning
+
+For this purpose, three sources of information will be used: the top 50 cities in the United States based on population size, from infoplease.com (https://www.infoplease.com/us/cities/top-50-cities-us-population-and-rank),
+Google Map's API to retrieve the coordinates for each city, which will then be passed along to Foursquare's API to retrieve a sample of locales around each city, with their exact location,
+and their zip codes.
+
+First, the information collected from infoplease.com contains previous census data used for their 2019 estimate. The previous census data can be discarded since it's not used for the scope of this project. This will be our "cities" table.
+Next, using iterative tools a table needs to be created from the "cities" and append the latitude and longitude coordinates of each city. This will be the "top cities" table.
+Using the iterative tools once more, we will use each record for each city's latitude and longitude to grab a sample of locales in each city for a radius of 5 miles from the coordinates given.
+The coordinates usually give the center-most point of a city, or the most downtown point. This will yield our "locales" table, containing city and locale exact locations.
+
+Once this information is put together in the locales table, the locales latitude and longitude attributes will be used to plot in a map for visualization purposes.
+The zip code feature will allow us to further visualize, with a sample, which zip codes may be underserved and have a potential for new offices the business may consider to open in.
